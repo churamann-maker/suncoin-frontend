@@ -1,0 +1,33 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-lg);
+}
+
+.container {
+  width: 100%;
+  max-width: 420px;
+}
+
+.card {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-2xl);
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .app {
+    padding: var(--spacing-md);
+    align-items: flex-start;
+    padding-top: var(--spacing-2xl);
+  }
+
+  .card {
+    padding: var(--spacing-lg);
+  }
+}

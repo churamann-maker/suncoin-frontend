@@ -1,0 +1,81 @@
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-xl);
+}
+
+.iconWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sunIcon {
+  font-size: 4rem;
+  color: var(--color-gold-primary);
+  filter: drop-shadow(0 0 20px var(--color-gold-glow-strong));
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.title {
+  font-family: var(--font-crypto);
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  background: linear-gradient(
+    135deg,
+    var(--color-gold-primary) 0%,
+    var(--color-gold-secondary) 50%,
+    var(--color-gold-primary) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+.tagline {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 20px var(--color-gold-glow-strong));
+  }
+  50% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 30px var(--color-gold-glow-strong));
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .sunIcon {
+    font-size: 3rem;
+  }
+
+  .title {
+    font-size: 2.25rem;
+  }
+
+  .tagline {
+    font-size: 0.75rem;
+  }
+}
