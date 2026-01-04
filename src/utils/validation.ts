@@ -24,9 +24,31 @@ export function validateName(name: string): string | null {
   return null;
 }
 
+export function validatePassword(password: string): string | null {
+  if (!password) {
+    return 'Password is required';
+  }
+  if (password.length < 8) {
+    return 'Password must be at least 8 characters';
+  }
+  return null;
+}
+
+export function validateVerificationCode(code: string): string | null {
+  if (!code) {
+    return 'Verification code is required';
+  }
+  if (!/^\d{6}$/.test(code)) {
+    return 'Verification code must be 6 digits';
+  }
+  return null;
+}
+
 export interface ValidationErrors {
   phoneNumber?: string;
   name?: string;
+  password?: string;
+  verificationCode?: string;
 }
 
 export function validateForm(phoneNumber: string, name: string): ValidationErrors {
@@ -37,6 +59,21 @@ export function validateForm(phoneNumber: string, name: string): ValidationError
 
   const nameError = validateName(name);
   if (nameError) errors.name = nameError;
+
+  return errors;
+}
+
+export function validateSignupForm(phoneNumber: string, name: string, password: string): ValidationErrors {
+  const errors: ValidationErrors = {};
+
+  const phoneError = validatePhoneNumber(phoneNumber);
+  if (phoneError) errors.phoneNumber = phoneError;
+
+  const nameError = validateName(name);
+  if (nameError) errors.name = nameError;
+
+  const passwordError = validatePassword(password);
+  if (passwordError) errors.password = passwordError;
 
   return errors;
 }

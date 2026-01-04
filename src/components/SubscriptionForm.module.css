@@ -11,6 +11,68 @@
   gap: var(--spacing-md);
 }
 
+.stepHeader {
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.stepHeader h3 {
+  margin: 0 0 var(--spacing-sm) 0;
+  font-size: 1.25rem;
+  color: var(--color-text);
+}
+
+.stepHeader p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.coinGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  max-height: 300px;
+  overflow-y: auto;
+  padding: var(--spacing-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.coinChip {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.coinChip:hover:not(:disabled) {
+  border-color: var(--color-primary);
+}
+
+.coinChip.selected {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+
+.coinChip.locked {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+  cursor: not-allowed;
+}
+
+.lockIcon {
+  margin-left: 4px;
+  font-size: 0.75rem;
+}
+
 .apiError {
   display: flex;
   align-items: center;
@@ -41,4 +103,23 @@
   text-align: center;
   font-size: 0.8125rem;
   color: var(--color-text-muted);
+}
+
+.switchLink {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.linkButton {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  cursor: pointer;
+  font-size: inherit;
+  text-decoration: underline;
+}
+
+.linkButton:hover {
+  color: var(--color-primary-hover);
 }
