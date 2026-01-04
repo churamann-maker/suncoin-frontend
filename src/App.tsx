@@ -88,6 +88,7 @@ function App() {
       case 'dashboard':
         return authState ? (
           <Dashboard
+            key={authState.subscriber.phoneNumber + JSON.stringify(authState.subscriber.selectedCoins)}
             subscriber={authState.subscriber}
             accessToken={authState.accessToken}
             onLogout={handleLogout}

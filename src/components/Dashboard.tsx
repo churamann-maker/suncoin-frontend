@@ -20,11 +20,12 @@ export function Dashboard({ subscriber, accessToken, onLogout, onUpdate }: Dashb
   const [isLoadingCoins, setIsLoadingCoins] = useState(true);
 
   // Sync selectedCoins when subscriber data changes (e.g., after sign-in or update)
+  // Using JSON.stringify to properly detect array content changes
   useEffect(() => {
     if (subscriber.selectedCoins && subscriber.selectedCoins.length > 0) {
-      setSelectedCoins(subscriber.selectedCoins);
+      setSelectedCoins([...subscriber.selectedCoins]);
     }
-  }, [subscriber.selectedCoins]);
+  }, [JSON.stringify(subscriber.selectedCoins)]);
 
   useEffect(() => {
     loadCoins();

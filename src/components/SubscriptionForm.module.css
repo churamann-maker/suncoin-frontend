@@ -56,9 +56,9 @@
 }
 
 .coinChip.selected {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
-  color: white;
+  background: #f7931a !important;
+  border-color: #f7931a !important;
+  color: white !important;
 }
 
 .coinChip.locked {
